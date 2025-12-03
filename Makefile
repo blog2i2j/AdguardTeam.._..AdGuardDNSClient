@@ -25,7 +25,7 @@ DIST_DIR = dist
 GOAMD64 = v1
 GOPROXY = https://proxy.golang.org|direct
 GOTELEMETRY = off
-GOTOOLCHAIN = go1.25.1
+GOTOOLCHAIN = go1.25.5
 GPG_KEY = devteam@adguard.com
 GPG_KEY_PASSPHRASE = not-a-real-password
 MSI = 1
@@ -35,32 +35,32 @@ SIGN = 1
 SIGNER_API_KEY = not-a-real-key
 VERSION = v0.0.0
 
-ENV = env\
-	BRANCH="$(BRANCH)"\
-	CHANNEL="$(CHANNEL)"\
-	DEPLOY_SCRIPT_PATH='$(DEPLOY_SCRIPT_PATH)' \
-	DIST_DIR='$(DIST_DIR)'\
-	GO="$(GO.MACRO)"\
-	GOAMD64='$(GOAMD64)'\
-	GOPROXY='$(GOPROXY)'\
-	GOTELEMETRY='$(GOTELEMETRY)'\
-	GOTOOLCHAIN='$(GOTOOLCHAIN)'\
-	GPG_KEY='$(GPG_KEY)'\
-	GPG_KEY_PASSPHRASE='$(GPG_KEY_PASSPHRASE)'\
-	MSI='$(MSI)'\
-	PATH="$${PWD}/bin:$$( "$(GO.MACRO)" env GOPATH )/bin:$${PATH}"\
-	RACE='$(RACE)'\
-	REVISION="$(REVISION)"\
-	SIGN='$(SIGN)'\
-	SIGNER_API_KEY='$(SIGNER_API_KEY)' \
-	VERBOSE="$(VERBOSE.MACRO)"\
-	VERSION="$(VERSION)"\
+ENV = env \
+	BRANCH="$(BRANCH)" \
+	CHANNEL="$(CHANNEL)" \
+	DEPLOY_SCRIPT_PATH='$(DEPLOY_SCRIPT_PATH)'  \
+	DIST_DIR='$(DIST_DIR)' \
+	GO="$(GO.MACRO)" \
+	GOAMD64='$(GOAMD64)' \
+	GOPROXY='$(GOPROXY)' \
+	GOTELEMETRY='$(GOTELEMETRY)' \
+	GOTOOLCHAIN='$(GOTOOLCHAIN)' \
+	GPG_KEY='$(GPG_KEY)' \
+	GPG_KEY_PASSPHRASE='$(GPG_KEY_PASSPHRASE)' \
+	MSI='$(MSI)' \
+	PATH="$${PWD}/bin:$$( "$(GO.MACRO)" env GOPATH )/bin:$${PATH}" \
+	RACE='$(RACE)' \
+	REVISION="$(REVISION)" \
+	SIGN='$(SIGN)' \
+	SIGNER_API_KEY='$(SIGNER_API_KEY)'  \
+	VERBOSE="$(VERBOSE.MACRO)" \
+	VERSION="$(VERSION)" \
 
 # Keep the line above blank.
 
-ENV_MISC = env\
-	PATH="$${PWD}/bin:$$("$(GO.MACRO)" env GOPATH)/bin:$${PATH}"\
-	VERBOSE="$(VERBOSE.MACRO)"\
+ENV_MISC = env \
+	PATH="$${PWD}/bin:$$("$(GO.MACRO)" env GOPATH)/bin:$${PATH}" \
+	VERBOSE="$(VERBOSE.MACRO)" \
 
 # Keep the line above blank.
 

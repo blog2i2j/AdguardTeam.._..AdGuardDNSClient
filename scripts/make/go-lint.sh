@@ -3,7 +3,7 @@
 # This comment is used to simplify checking local copies of the script.  Bump
 # this number every time a significant change is made to this script.
 #
-# AdGuard-Project-Version: 14
+# AdGuard-Project-Version: 15
 
 verbose="${VERBOSE:-0}"
 readonly verbose
@@ -176,7 +176,7 @@ run_linter fieldalignment ./...
 
 run_linter -e shadow --strict ./...
 
-run_linter gosec --quiet ./...
+run_linter gosec --fmt=golint --quiet ./...
 
 run_linter errcheck ./...
 
