@@ -1,4 +1,4 @@
-module github.com/AdguardTeam/AdGuardDNSClient
+module github.com/AdguardTeam/AdGuardDNSCLI
 
 go 1.25.5
 

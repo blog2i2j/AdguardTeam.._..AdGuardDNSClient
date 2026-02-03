@@ -1,4 +1,4 @@
-# AdGuard DNS Client changelog
+# AdGuard DNS CLI changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -7,14 +7,34 @@ The format is based on [*Keep a Changelog*](https://keepachangelog.com/en/1.0.0/
 ## [Unreleased]
 
 <!--
-## [v0.0.5] - 2025-05-30 (APPROX.)
+## [v0.1.0] - 2026-02-02 (APPROX.)
 
-See also the [v0.0.5 GitHub milestone][ms-v0.0.5].
+See also the [v0.1.0 GitHub milestone][ms-v0.1.0].
 
-[ms-v0.0.5]: https://github.com/AdguardTeam/AdGuardDNSClient/milestone/5?closed=1
+[ms-v0.1.0]: https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/2?closed=1
 
 NOTE: Add new changes BELOW THIS COMMENT.
 -->
+
+### Changed
+
+- The project name has been changed from "AdGuard DNS Client" to "AdGuard DNS CLI".
+
+  > [!WARNING]
+  > This is a breaking change for existing MSI installations as well as for service installations, so those should be manually uninstalled before installing the new version.
+
+    1. Make a backup of the existing configuration file (if any).
+    1. Uninstall the AdGuard DNS Client:
+        - To uninstall the existing MSI installation, use the original `.msi` installer with "Uninstall" option or the "Add or Remove Programs" control panel.
+        - To uninstall the existing service, use the `AdGuardDNSClient` executable with the following command:
+
+          ```sh
+          ./AdGuardDNSClient -s uninstall
+          ```
+
+    1. Install the AdGuard DNS CLI.
+    1. Restore the configuration file (if any).
+
 <!--
 NOTE: Add new changes ABOVE THIS COMMENT.
 -->
@@ -27,7 +47,7 @@ See also the [v0.0.4 GitHub milestone][ms-v0.0.4].
 
 - Any simultaneous requests that are considered duplicates will now only result in a single request to upstreams, reducing the chance of a cache poisoning attack succeeding.  This is controlled by the new configuration object `dns.server.pending_requests`, which has a single `enabled` property, set to `true` by default.
 
-    **NOTE:** We thank [Xiang Li][mr-xiang-li] for reporting this security issue.  It's strongly recommended to leave it enabled, otherwise AdGuardDNS Client will be vulnerable to untrusted clients.
+    **NOTE:** We thank [Xiang Li][mr-xiang-li] for reporting this security issue.  It's strongly recommended to leave it enabled, otherwise AdGuardDNSCLI will be vulnerable to untrusted clients.
 
 - Go version has been updated to prevent the possibility of exploiting the Go vulnerabilities fixed in [Go 1.24.2][go-1.24.2].
 
@@ -63,7 +83,7 @@ To rollback this change, remove the `dns.server.pending_requests` object and set
 
 [go-1.24.2]:   https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk
 [mr-xiang-li]: https://lixiang521.com/
-[ms-v0.0.4]:   https://github.com/AdguardTeam/AdGuardDNSClient/milestone/4?closed=1
+[ms-v0.0.4]:   https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/4?closed=1
 
 ## [v0.0.3] - 2025-04-01
 
@@ -109,10 +129,10 @@ To rollback this change, remove the `dns.server.bind_retry` object and set the `
 
 - Failed binding to listen addresses when installed as Windows service ([#11]).
 
-[#11]: https://github.com/AdguardTeam/AdGuardDNSClient/issues/11
+[#11]: https://github.com/AdguardTeam/AdGuardDNSCLI/issues/11
 
 [go-1.24.1]: https://groups.google.com/g/golang-announce/c/4t3lzH3I0eI
-[ms-v0.0.3]: https://github.com/AdguardTeam/AdGuardDNSClient/milestone/3?closed=1
+[ms-v0.0.3]: https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/3?closed=1
 
 ## [v0.0.2] - 2024-11-08
 
@@ -137,13 +157,13 @@ See also the [v0.0.2 GitHub milestone][ms-v0.0.2].
   **NOTE:** The implementation is actually a workaround for a known [Go issue][go-59229], and uses the `/usr/bin/logger` utility. This approach is suboptimal and will be improved once the Go issue is resolved.
 - DNS proxy logs being written to `stderr` instead of `log.output` ([#1]).
 
-[#1]: https://github.com/AdguardTeam/AdGuardDNSClient/issues/1
-[#2]: https://github.com/AdguardTeam/AdGuardDNSClient/issues/2
-[#3]: https://github.com/AdguardTeam/AdGuardDNSClient/issues/3
+[#1]: https://github.com/AdguardTeam/AdGuardDNSCLI/issues/1
+[#2]: https://github.com/AdguardTeam/AdGuardDNSCLI/issues/2
+[#3]: https://github.com/AdguardTeam/AdGuardDNSCLI/issues/3
 
 [go-1.23.3]: https://groups.google.com/g/golang-announce/c/X5KodEJYuqI
 [go-59229]:  https://github.com/golang/go/issues/59229
-[ms-v0.0.2]: https://github.com/AdguardTeam/AdGuardDNSClient/milestone/1?closed=1
+[ms-v0.0.2]: https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/1?closed=1
 
 ## [v0.0.1] - 2024-06-17
 
@@ -152,12 +172,12 @@ See also the [v0.0.2 GitHub milestone][ms-v0.0.2].
 - Everything!
 
 <!--
-[Unreleased]: https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.5...HEAD
-[v0.0.5]:     https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.4...v0.0.5
+[Unreleased]: https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.1.0...HEAD
+[v0.1.0]:     https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.4...v0.1.0
 -->
 
-[Unreleased]: https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.4...HEAD
-[v0.0.4]:     https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.3...v0.0.4
-[v0.0.3]:     https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.2...v0.0.3
-[v0.0.2]:     https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.1...v0.0.2
-[v0.0.1]:     https://github.com/AdguardTeam/AdGuardDNSClient/compare/v0.0.0...v0.0.1
+[Unreleased]: https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.4...HEAD
+[v0.0.4]:     https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.3...v0.0.4
+[v0.0.3]:     https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.2...v0.0.3
+[v0.0.2]:     https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.1...v0.0.2
+[v0.0.1]:     https://github.com/AdguardTeam/AdGuardDNSCLI/compare/v0.0.0...v0.0.1

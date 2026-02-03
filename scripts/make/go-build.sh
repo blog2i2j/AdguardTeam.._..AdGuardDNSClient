@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# AdGuardDNSClient build script
+# AdGuard DNS CLI build script
 #
 # The commentary in this file is written with the assumption that the reader
 # only has superficial knowledge of the POSIX shell language and alike.
@@ -54,7 +54,7 @@ committime="${SOURCE_DATE_EPOCH:-$(git log -1 --pretty=%ct)}"
 readonly committime
 
 # Compile them in.
-version_pkg='github.com/AdguardTeam/AdGuardDNSClient/internal/version'
+version_pkg='github.com/AdguardTeam/AdGuardDNSCLI/internal/version'
 ldflags="-s -w"
 ldflags="${ldflags} -X ${version_pkg}.branch=${branch}"
 ldflags="${ldflags} -X ${version_pkg}.committime=${committime}"
@@ -75,7 +75,7 @@ readonly GOFLAGS
 export GOFLAGS
 
 # Allow users to specify a different output name.
-out="${OUT:-AdGuardDNSClient}"
+out="${OUT:-adguarddns-cli}"
 readonly out
 
 o_flags="-o=${out}"

@@ -7,12 +7,12 @@
 'plan':
     'project-key': 'GO'
     'key': 'DNSCLIENT'
-    'name': 'AdGuardDNSClient'
+    'name': 'AdGuardDNSCLI'
 'variables':
     # NOTE:  The Test stage depends on BusyBox syslogd on Alpine.
     'dockerGo': 'adguard/go-builder:1.25.5--1'
     'maintainer': 'Adguard Go Team'
-    'name': 'AdGuardDNSClient'
+    'name': 'adguarddns-cli'
     'channel': 'development'
 
 'stages':
@@ -146,48 +146,48 @@
 
 'Artifact':
     'artifacts':
-      - 'name': 'AdGuardDNSClient_darwin_amd64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_darwin_amd64.zip'
+      - 'name': 'AdGuardDNSCLI_darwin_amd64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_darwin_amd64.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_darwin_arm64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_darwin_arm64.zip'
+      - 'name': 'AdGuardDNSCLI_darwin_arm64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_darwin_arm64.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_linux_386'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_linux_386.tar.gz'
+      - 'name': 'AdGuardDNSCLI_linux_386'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_linux_386.tar.gz'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_linux_amd64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_linux_amd64.tar.gz'
+      - 'name': 'AdGuardDNSCLI_linux_amd64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_linux_amd64.tar.gz'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_linux_arm64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_linux_arm64.tar.gz'
+      - 'name': 'AdGuardDNSCLI_linux_arm64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_linux_arm64.tar.gz'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_386'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_386.zip'
+      - 'name': 'AdGuardDNSCLI_windows_386'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_386.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_386_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_386.msi'
+      - 'name': 'AdGuardDNSCLI_windows_386_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_386.msi'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_amd64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_amd64.zip'
+      - 'name': 'AdGuardDNSCLI_windows_amd64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_amd64.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_amd64_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_amd64.msi'
+      - 'name': 'AdGuardDNSCLI_windows_amd64_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_amd64.msi'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_arm64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_arm64.zip'
+      - 'name': 'AdGuardDNSCLI_windows_arm64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_arm64.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_arm64_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_arm64.msi'
+      - 'name': 'AdGuardDNSCLI_windows_arm64_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_arm64.msi'
         'shared': true
         'required': true
       - 'name': 'Checksums'
@@ -244,24 +244,24 @@
 
 'ArtifactQA':
     'artifacts':
-      - 'name': 'AdGuardDNSClient_darwin_amd64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_darwin_amd64.zip'
+      - 'name': 'AdGuardDNSCLI_darwin_amd64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_darwin_amd64.zip'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_linux_amd64'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_linux_amd64.tar.gz'
+      - 'name': 'AdGuardDNSCLI_linux_amd64'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_linux_amd64.tar.gz'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_386_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_386.msi'
+      - 'name': 'AdGuardDNSCLI_windows_386_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_386.msi'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_amd64_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_amd64.msi'
+      - 'name': 'AdGuardDNSCLI_windows_amd64_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_amd64.msi'
         'shared': true
         'required': true
-      - 'name': 'AdGuardDNSClient_windows_arm64_msi'
-        'pattern': '${bamboo.name}/dist/AdGuardDNSClient_windows_arm64.msi'
+      - 'name': 'AdGuardDNSCLI_windows_arm64_msi'
+        'pattern': '${bamboo.name}/dist/AdGuardDNSCLI_windows_arm64.msi'
         'shared': true
         'required': true
       - 'name': 'Checksums'
@@ -328,17 +328,17 @@
 
 'Publish':
     'artifact-subscriptions':
-    - 'artifact': 'AdGuardDNSClient_darwin_amd64'
-    - 'artifact': 'AdGuardDNSClient_darwin_arm64'
-    - 'artifact': 'AdGuardDNSClient_linux_386'
-    - 'artifact': 'AdGuardDNSClient_linux_amd64'
-    - 'artifact': 'AdGuardDNSClient_linux_arm64'
-    - 'artifact': 'AdGuardDNSClient_windows_386'
-    - 'artifact': 'AdGuardDNSClient_windows_386_msi'
-    - 'artifact': 'AdGuardDNSClient_windows_amd64'
-    - 'artifact': 'AdGuardDNSClient_windows_amd64_msi'
-    - 'artifact': 'AdGuardDNSClient_windows_arm64'
-    - 'artifact': 'AdGuardDNSClient_windows_arm64_msi'
+    - 'artifact': 'AdGuardDNSCLI_darwin_amd64'
+    - 'artifact': 'AdGuardDNSCLI_darwin_arm64'
+    - 'artifact': 'AdGuardDNSCLI_linux_386'
+    - 'artifact': 'AdGuardDNSCLI_linux_amd64'
+    - 'artifact': 'AdGuardDNSCLI_linux_arm64'
+    - 'artifact': 'AdGuardDNSCLI_windows_386'
+    - 'artifact': 'AdGuardDNSCLI_windows_386_msi'
+    - 'artifact': 'AdGuardDNSCLI_windows_amd64'
+    - 'artifact': 'AdGuardDNSCLI_windows_amd64_msi'
+    - 'artifact': 'AdGuardDNSCLI_windows_arm64'
+    - 'artifact': 'AdGuardDNSCLI_windows_arm64_msi'
     - 'artifact': 'Checksums'
     - 'artifact': 'Version'
     'final-tasks':
@@ -367,7 +367,7 @@
                 env\
                     GITHUB_TOKEN="${bamboo.githubPublicRepoPassword}"\
                     ../../bamboo-deploy-publisher/deploy.sh\
-                    adguarddns-client-github
+                    adguarddns-cli-github
 
 # TODO(e.burkov):  Limit repositories when the Bamboo version will support such
 # configuration for triggers via YAML specs.

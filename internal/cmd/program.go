@@ -7,15 +7,15 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/dnssvc"
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/version"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/dnssvc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/version"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"
 	"github.com/AdguardTeam/golibs/service"
 	osservice "github.com/kardianos/service"
 )
 
 // program is the implementation of the [osservice.Interface] interface for
-// AdGuardDNSClient.
+// AdGuard DNS CLI.
 type program struct {
 	// TODO(e.burkov):  Add *options?
 
@@ -45,7 +45,7 @@ func (prog *program) Start(_ osservice.Service) (err error) {
 	// TODO(a.garipov): Copy logs configuration from the WIP abt. slog.
 	l.InfoContext(
 		ctx,
-		"AdGuardDNSClient starting",
+		"AdGuard DNS CLI starting",
 		"version", version.Version(),
 		"revision", version.Revision(),
 		"branch", version.Branch(),

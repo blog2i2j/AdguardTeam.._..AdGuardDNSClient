@@ -45,7 +45,7 @@ trailing_newlines() (
 		-o -name '*.tar.gz' \
 		-o -name '*.test' \
 		-o -name '*.zip' \
-		-o -name 'AdGuardDNSClient' \
+		-o -name 'adguarddns-cli' \
 		')' \
 		-print \
 		| while read -r f; do
@@ -69,7 +69,7 @@ trailing_whitespace() {
 		-o -name '*.tar.gz' \
 		-o -name '*.test' \
 		-o -name '*.zip' \
-		-o -name 'AdGuardDNSClient' \
+		-o -name 'adguarddns-cli' \
 		')' \
 		-print \
 		| while read -r f; do

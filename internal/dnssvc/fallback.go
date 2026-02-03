@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdcslog"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcslog"
 	"github.com/AdguardTeam/dnsproxy/proxy"
 	"github.com/AdguardTeam/dnsproxy/upstream"
 )

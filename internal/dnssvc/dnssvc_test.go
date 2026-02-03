@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdc"
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/dnssvc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/dnssvc"
 	"github.com/AdguardTeam/dnsproxy/proxy"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"
 	"github.com/AdguardTeam/golibs/netutil"

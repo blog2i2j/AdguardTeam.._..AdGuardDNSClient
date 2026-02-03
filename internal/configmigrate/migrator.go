@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdcos"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcos"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/timeutil"
 	"github.com/AdguardTeam/golibs/validate"

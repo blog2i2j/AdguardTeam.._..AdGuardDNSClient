@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# AdGuardDNSClient Release Script
+# AdGuard DNS CLI Release Script
 #
 # The commentary in this file is written with the assumption that the reader
 # only has superficial knowledge of the POSIX shell language and alike.
@@ -41,7 +41,7 @@ log() {
 	fi
 }
 
-log 'starting to build AdGuardDNSClient release'
+log 'starting to build AdGuard DNS CLI release'
 
 # Require the channel to be set.  Additional validation is performed later by
 # go-build.sh.
@@ -214,7 +214,7 @@ build_msi() {
 build() {
 	# Get the arguments.  Here and below, use the "build_" prefix for all
 	# variables local to function build.
-	build_dir="${dist}/${1}/AdGuardDNSClient" \
+	build_dir="${dist}/${1}/AdGuardDNSCLI" \
 		build_ar="$2" \
 		build_os="$3" \
 		build_arch="$4" \
@@ -222,9 +222,9 @@ build() {
 
 	# Use the ".exe" filename extension if we build a Windows release.
 	if [ "$build_os" = 'windows' ]; then
-		build_output="./${build_dir}/AdGuardDNSClient.exe"
+		build_output="./${build_dir}/adguarddns-cli.exe"
 	else
-		build_output="./${build_dir}/AdGuardDNSClient"
+		build_output="./${build_dir}/adguarddns-cli"
 	fi
 
 	mkdir -p "./${build_dir}"
@@ -267,17 +267,17 @@ build() {
 
 		# TODO(a.garipov): Find an option similar to the -C option of tar for
 		# zip.
-		(cd "${dist}/${1}" && zip -9 -q -r "../../${build_archive}" "./AdGuardDNSClient")
+		(cd "${dist}/${1}" && zip -9 -q -r "../../${build_archive}" "./AdGuardDNSCLI")
 		;;
 	'darwin')
 		build_archive="./${dist}/${build_ar}.zip"
 		# TODO(a.garipov): Find an option similar to the -C option of tar for
 		# zip.
-		(cd "${dist}/${1}" && zip -9 -q -r "../../${build_archive}" "./AdGuardDNSClient")
+		(cd "${dist}/${1}" && zip -9 -q -r "../../${build_archive}" "./AdGuardDNSCLI")
 		;;
 	*)
 		build_archive="./${dist}/${build_ar}.tar.gz"
-		tar -C "./${dist}/${1}" -c -f - "./AdGuardDNSClient" | gzip -9 - >"$build_archive"
+		tar -C "./${dist}/${1}" -c -f - "./AdGuardDNSCLI" | gzip -9 - >"$build_archive"
 		;;
 	esac
 
@@ -313,7 +313,7 @@ echo "$platforms" | while read -r os arch; do
 		continue
 	fi
 
-	dir="AdGuardDNSClient_${os}_${arch}"
+	dir="AdGuardDNSCLI_${os}_${arch}"
 	# Name archive the same as the corresponding distribution directory.
 	ar="$dir"
 

@@ -4,7 +4,7 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/dnssvc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/dnssvc"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/timeutil"
 	"github.com/AdguardTeam/golibs/validate"

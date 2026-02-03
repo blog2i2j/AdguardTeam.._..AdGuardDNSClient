@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdc"
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/configmigrate"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/configmigrate"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"
 	"github.com/AdguardTeam/golibs/netutil"
@@ -39,7 +39,7 @@ const (
 	// defaultBindRetryEnabled is the default value for the bind retrying
 	// feature to be enabled.
 	//
-	// See https://github.com/AdguardTeam/AdGuardDNSClient/issues/11.
+	// See https://github.com/AdguardTeam/AdGuardDNSCLI/issues/11.
 	defaultBindRetryEnabled = true
 
 	// defaultBindRetryIvl is the default interval to wait between listen

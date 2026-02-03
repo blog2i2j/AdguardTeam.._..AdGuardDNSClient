@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdcos"
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/configmigrate"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcos"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/configmigrate"
 	"github.com/AdguardTeam/golibs/container"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"
@@ -17,7 +17,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// configuration is the structure of YAML configuration for AdGuardDNSClient.
+// configuration is the structure of YAML configuration for AdGuard DNS CLI.
 //
 // TODO(e.burkov):  Test it out.
 type configuration struct {

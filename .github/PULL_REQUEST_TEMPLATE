@@ -1,6 +1,6 @@
 Before submitting a PR please make sure that:
 
-1. You have discussed your solution in an issue and have got an approval from a maintainer. See our [contribution guide](https://github.com/AdguardTeam/AdGuardDNSClient/blob/master/CONTRIBUTING.md).
+1. You have discussed your solution in an issue and have got an approval from a maintainer. See our [contribution guide](https://github.com/AdguardTeam/AdGuardDNSCLI/blob/master/CONTRIBUTING.md).
 
 2. Your code follows our [code guidelines](https://github.com/AdguardTeam/CodeGuidelines/blob/master/Go/Go.md).
 

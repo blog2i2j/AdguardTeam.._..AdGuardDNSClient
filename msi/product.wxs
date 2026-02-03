@@ -108,7 +108,7 @@
         >
         <Directory
             Id="INSTALLDIR"
-            Name="AdGuard DNS Client"
+            Name="AdGuardDNSCLI"
           >
           <Component
               Id="MainExecutable"
@@ -116,10 +116,10 @@
               Win64="$(var.ComponentWin64)"
             >
             <File
-                Id="AdGuardDNSClient"
-                Name="AdGuardDNSClient.exe"
+                Id="AdGuardDNSCLI_EXE"
+                Name="adguarddns-cli.exe"
                 DiskId="1"
-                Source="$(var.BuildDir)/AdGuardDNSClient.exe"
+                Source="$(var.BuildDir)/adguarddns-cli.exe"
                 KeyPath="yes"
               >
               <!--
@@ -169,7 +169,7 @@
     <CustomAction
         Id="InstallSvc"
         Impersonate="no"
-        FileKey="AdGuardDNSClient"
+        FileKey="AdGuardDNSCLI_EXE"
         ExeCommand="-s install"
         Execute="deferred"
         Return="check"
@@ -182,7 +182,7 @@
     <CustomAction
         Id="RollbackInstallSvc"
         Impersonate="no"
-        FileKey="AdGuardDNSClient"
+        FileKey="AdGuardDNSCLI_EXE"
         ExeCommand="-s uninstall"
         Execute="rollback"
         Return="ignore"
@@ -195,7 +195,7 @@
     <CustomAction
         Id="UninstallSvc"
         Impersonate="no"
-        FileKey="AdGuardDNSClient"
+        FileKey="AdGuardDNSCLI_EXE"
         ExeCommand="-s uninstall"
         Execute="deferred"
         Return="ignore"
@@ -238,7 +238,7 @@
     <CustomAction
         Id="StartSvc"
         Impersonate="no"
-        FileKey="AdGuardDNSClient"
+        FileKey="AdGuardDNSCLI_EXE"
         ExeCommand="-s start"
         Execute="commit"
         Return="check"
@@ -251,7 +251,7 @@
     <CustomAction
         Id="StopSvc"
         Impersonate="no"
-        FileKey="AdGuardDNSClient"
+        FileKey="AdGuardDNSCLI_EXE"
         ExeCommand="-s stop"
         Execute="deferred"
         Return="ignore"

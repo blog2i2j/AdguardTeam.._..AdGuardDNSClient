@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"net/netip"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/dnssvc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/dnssvc"
 	"github.com/AdguardTeam/golibs/container"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"

@@ -17,7 +17,7 @@
 /bin/
 /dist/
 /test-reports/
-AdGuardDNSClient
-AdGuardDNSClient.exe
+adguarddns-cli
+adguarddns-cli.exe
 config.yaml
 backup-*.dir

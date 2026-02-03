@@ -1,4 +1,4 @@
-// Package cmd is the AdGuardDNSClient entry point.
+// Package cmd is the AdGuard DNS CLI entry point.
 package cmd
 
 import (
@@ -14,7 +14,7 @@ import (
 	osservice "github.com/kardianos/service"
 )
 
-// Main is the entrypoint of AdGuardDNS Client.  Main may accept arguments, such
+// Main is the entrypoint of AdGuard DNS CLI.  Main may accept arguments, such
 // as embedded assets and command-line arguments.
 func Main() {
 	// TODO(a.garipov):  Use for start cancelation.

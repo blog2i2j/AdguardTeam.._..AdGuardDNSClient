@@ -11,7 +11,7 @@
           - 'label': >
                 I have checked the [Knowledge Base](https://adguard-dns.io/kb/)
                 and the
-                [Discussions](https://github.com/AdguardTeam/AdGuardDNSClient/discussions)
+                [Discussions](https://github.com/AdguardTeam/AdGuardDNSCLI/discussions)
                 and found no answer
             'required': true
           - 'label': >

@@ -11,7 +11,7 @@
           - 'label': >
                 I have checked the [Knowledge Base](https://adguard-dns.io/kb/)
                 and the
-                [Discussions](https://github.com/AdguardTeam/AdGuardDNSClient/discussions)
+                [Discussions](https://github.com/AdguardTeam/AdGuardDNSCLI/discussions)
                 and found no answer
             'required': true
           - 'label': >
@@ -19,12 +19,12 @@
             'required': true
           - 'label': >
                 I want to report a bug and not [ask a question or ask for
-                help](https://github.com/AdguardTeam/AdGuardDNSClient/discussions/categories/q-a)
+                help](https://github.com/AdguardTeam/AdGuardDNSCLI/discussions/categories/q-a)
             'required': true
           - 'label': >
-                I have set up AdGuard DNS Clients correctly and configured clients to
+                I have set up AdGuard DNS CLI correctly and configured clients to
                 use it. (Use the
-                [Discussions](https://github.com/AdguardTeam/AdGuardDNSClient/discussions/categories/q-a)
+                [Discussions](https://github.com/AdguardTeam/AdGuardDNSCLI/discussions/categories/q-a)
                 for help with installing and configuring clients.)
             'required': true
     'id': 'prerequisites'
@@ -49,7 +49,7 @@
     'validations':
         'required': true
   - 'attributes':
-        'description': 'How did you install AdGuard DNS Client?'
+        'description': 'How did you install AdGuard DNS CLI?'
         'label': 'Installation'
         'options':
           - 'GitHub releases'
@@ -59,7 +59,7 @@
     'validations':
         'required': true
   - 'attributes':
-        'description': 'How did you setup AdGuard DNS Client?'
+        'description': 'How did you setup AdGuard DNS CLI?'
         'label': 'Setup'
         'options':
           - 'On a personal machine'
@@ -70,8 +70,8 @@
     'validations':
         'required': true
   - 'attributes':
-        'description': 'What version of AdGuard DNS Client are you using?'
-        'label': 'AdGuard DNS Client version'
+        'description': 'What version of AdGuard DNS CLI are you using?'
+        'label': 'AdGuard DNS CLI version'
     'id': 'version'
     'type': 'input'
     'validations':
@@ -86,7 +86,7 @@
             description of the failing action:
 
             ```sh
-            nslookup -debug -type=a "www.example.com" "$AGDNS_CLIENT_ADDRESS"
+            nslookup -debug -type=a "www.example.com" "$AGDNSCLI_ADDRESS"
             ```
     'id': 'failing_action'
     'type': 'textarea'

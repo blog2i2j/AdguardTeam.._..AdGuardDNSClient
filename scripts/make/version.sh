@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# AdGuardDNSClient Version Generation Script
+# AdGuard DNS CLI Version Generation Script
 #
 # This script generates versions based on the current git tree state.  The valid
 # output formats are:

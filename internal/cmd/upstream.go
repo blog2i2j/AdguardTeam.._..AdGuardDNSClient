@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdc"
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/dnssvc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdc"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/dnssvc"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/netutil"
 	"github.com/AdguardTeam/golibs/timeutil"

@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdcslog"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcslog"
 	"github.com/AdguardTeam/golibs/errors"
 	"github.com/AdguardTeam/golibs/logutil/slogutil"
 	"github.com/AdguardTeam/golibs/validate"

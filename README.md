@@ -1,4 +1,4 @@
-# AdGuard DNS Client
+# AdGuard DNS CLI
 
 <!-- markdownlint-disable MD033 -->
 
@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-    <img alt="Screenshot showing the logs of AdGuard DNS Client" src="https://cdn.adtidy.org/content/illustrations/adguard_dns_client.png" width="800"/>
+    <img alt="Screenshot showing the logs of AdGuard DNS CLI" src="https://cdn.adtidy.org/content/illustrations/adguarddns-cli_screenshot.png" width="800"/>
 </p>
 
 <!-- markdownlint-enable MD033 -->
@@ -22,7 +22,7 @@ A cross-platform lightweight DNS client for [AdGuard DNS]. It operates as a DNS 
 ## <a href="#start" id="start" name="start">Quick start</a>
 
 > [!WARNING]
-> AdGuard DNS Client is still in the Beta stage. It may be unstable.
+> AdGuard DNS CLI is still in the Beta stage. It may be unstable.
 
 Supported operating systems:
 
@@ -43,12 +43,12 @@ Supported CPU architectures:
 1. Download and unpack the `.tar.gz` or `.zip` archive from the [releases page][releases].
 
     > [!WARNING]
-    > On macOS, it's crucial that globally installed daemons are owned by `root` (see the [`launchd` documentation][launchd-requirements]), so the `AdGuardDNSClient` executable must be placed in the `/Applications/` directory or its subdirectory.
+    > On macOS, it's crucial that globally installed daemons are owned by `root` (see the [`launchd` documentation][launchd-requirements]), so the `adguarddns-cli` executable must be placed in the `/Applications/` directory or its subdirectory.
 
 2. Install it as a service by running:
 
     ```sh
-    ./AdGuardDNSClient -s install -v
+    ./adguarddns-cli -s install -v
     ```
 
 3. Edit the configuration file `config.yaml`.
@@ -56,7 +56,7 @@ Supported CPU architectures:
 4. Start the service:
 
     ```sh
-    ./AdGuardDNSClient -s start -v
+    ./adguarddns-cli -s start -v
     ```
 
 To check that it works, use any DNS checking utility. For example, using `nslookup`:
@@ -66,7 +66,7 @@ nslookup -debug 'www.example.com' '127.0.0.1'
 ```
 
 [launchd-requirements]: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html
-[releases]: https://github.com/AdguardTeam/AdGuardDNSClient/releases
+[releases]: https://github.com/AdguardTeam/AdGuardDNSCLI/releases
 
 ### <a href="#start-basic-win" id="start-basic-win" name="start-basic-win">Windows</a>
 
@@ -86,7 +86,7 @@ See [`CONTRIBUTING.md`][contr] for more details on how to contribute.
 
 ### <a href="#dev-start" id="dev-start" name="dev-start">Development quick start</a>
 
-You will need Go 1.23 or later. First, register our pre-commit hooks:
+You will need Go 1.25 or later. First, register our pre-commit hooks:
 
 ```sh
 make init
@@ -98,7 +98,7 @@ Then, install the necessary tools and dependencies:
 make go-deps go-tools
 ```
 
-That’s pretty much it! You should now be able to lint, test, and build the `AdGuardDNSClient` binary:
+That’s pretty much it! You should now be able to lint, test, and build the `adguarddns-cli` binary:
 
 ```sh
 make go-lint
@@ -114,18 +114,18 @@ Each option overrides the corresponding value provided by the configuration file
 
 ### <a href="#opts-help" id="opts-help" name="opts-help">Help</a>
 
-Option `-h` makes AdGuard DNS Client print out a help message to standard output and exit with a success status-code.
+Option `-h` makes AdGuard DNS CLI print out a help message to standard output and exit with a success status-code.
 
 ### <a href="#opts-service" id="opts-service" name="opts-service">Service</a>
 
 Option `-s <value>` specifies the OS service action. Possible values are:
 
-- `install`: installs AdGuard DNS Client as a service;
-- `restart`: restarts the running AdGuard DNS Client service.
-- `start`: starts the installed AdGuard DNS Client service;
-- `status`: shows the status of the installed AdGuard DNS Client service;
-- `stop`: stops the running AdGuard DNS Client;
-- `uninstall`: uninstalls AdGuard DNS Client service;
+- `install`: installs AdGuard DNS CLI as a service;
+- `restart`: restarts the running AdGuard DNS CLI service.
+- `start`: starts the installed AdGuard DNS CLI service;
+- `status`: shows the status of the installed AdGuard DNS CLI service;
+- `stop`: stops the running AdGuard DNS CLI;
+- `uninstall`: uninstalls AdGuard DNS CLI service;
 
 ### <a href="#opts-verbose" id="opts-verbose" name="opts-verbose">Verbose</a>
 
@@ -133,7 +133,7 @@ Option `-v` enables the verbose log output.
 
 ### <a href="#opts-version" id="opts-version" name="opts-version">Version</a>
 
-Option `--version` makes AdGuard DNS Client print out the version of the `AdGuardDNSClient` executable to standard output and exit with a success status-code.
+Option `--version` makes AdGuard DNS CLI print out the version of the application to standard output and exit with a success status-code.
 
 ## <a href="#conf" id="conf" name="conf">Configuration</a>
 

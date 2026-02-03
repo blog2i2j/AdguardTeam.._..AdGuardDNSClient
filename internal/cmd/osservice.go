@@ -11,15 +11,15 @@ import (
 )
 
 // serviceName is the name used by the service and the system logger.
-const serviceName = "AdGuardDNSClient"
+const serviceName = "AdGuard DNS CLI"
 
 // newServiceConfig creates a configuration that the OS service manager uses to
 // control the service.
 func newServiceConfig() (conf *osservice.Config) {
 	return &osservice.Config{
 		Name:        serviceName,
-		DisplayName: "AdGuardDNS Client",
-		Description: "A DNS client for AdGuardDNS",
+		DisplayName: "AdGuard DNS CLI",
+		Description: "A DNS client for AdGuard DNS",
 	}
 }
 

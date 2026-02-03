@@ -14,7 +14,7 @@
   - 'about': >
         Please use GitHub Discussions for questions
     'name': 'Q&A Discussions'
-    'url': 'https://github.com/AdguardTeam/AdGuardDNSClient/discussions'
+    'url': 'https://github.com/AdguardTeam/AdGuardDNSCLI/discussions'
   - 'about': >
         Please check our Knowledge Base for configuration file description,
         frequently asked questions, and other documentation

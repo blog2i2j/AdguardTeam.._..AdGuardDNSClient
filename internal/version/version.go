@@ -28,7 +28,7 @@ func Revision() (r string) {
 	return revision
 }
 
-// Version returns the compiled-in value of the AdGuardDNSClient version as a
+// Version returns the compiled-in value of the AdGuard DNS CLI version as a
 // string.
 func Version() (v string) {
 	return version

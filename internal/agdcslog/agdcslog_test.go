@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/agdcslog"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcslog"
 	"github.com/AdguardTeam/golibs/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -22,7 +22,7 @@ import (
 const testTimeout = 1 * time.Second
 
 // testServiceName is the service name for integration tests.
-const testServiceName = "AdGuardDNSClientTest"
+const testServiceName = "AdGuardDNSCLITest"
 
 // requireIntegration skips the test unless TEST_AGDCSLOG is set to "1".
 func requireIntegration(tb testing.TB) {
@@ -319,8 +319,8 @@ func BenchmarkSyslogHandler_Handle(b *testing.B) {
 	// Most recent results:
 	//
 	//	goos: darwin
-	//	goarch: amd64
-	//	pkg: github.com/AdguardTeam/AdGuardDNSClient/internal/agdcslog
-	//	cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
-	//	BenchmarkSyslogHandler_Handle-12    	 2537618	       471.6 ns/op	      64 B/op	       1 allocs/op
+	//	goarch: arm64
+	//	pkg: github.com/AdguardTeam/AdGuardDNSCLI/internal/agdcslog
+	//	cpu: Apple M4 Pro
+	//	BenchmarkSyslogHandler_Handle-14    	 5660894	       194.3 ns/op	      64 B/op	       1 allocs/op
 }

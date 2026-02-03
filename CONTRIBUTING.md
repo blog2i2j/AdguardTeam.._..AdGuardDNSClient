@@ -1,6 +1,6 @@
-# Contributing to AdGuard DNS Client
+# Contributing to AdGuard DNS CLI
 
-If you want to contribute to AdGuard DNS Client by filing or commenting on an issue or opening a pull request, please follow the instructions below.
+If you want to contribute to AdGuard DNS CLI by filing or commenting on an issue or opening a pull request, please follow the instructions below.
 
 ## General recommendations
 

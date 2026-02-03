@@ -1,4 +1,4 @@
-// Package dnssvc provides DNS handling functionality for AdGuardDNSClient.
+// Package dnssvc provides DNS handling functionality for AdGuard DNS CLI.
 package dnssvc
 
 import (

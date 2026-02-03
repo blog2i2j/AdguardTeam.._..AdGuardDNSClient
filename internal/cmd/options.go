@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/AdguardTeam/AdGuardDNSClient/internal/version"
+	"github.com/AdguardTeam/AdGuardDNSCLI/internal/version"
 	"github.com/AdguardTeam/golibs/errors"
 )
 

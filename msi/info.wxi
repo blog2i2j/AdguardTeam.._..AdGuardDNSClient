@@ -59,7 +59,7 @@
     https://wixtoolset.org/docs/v3/howtos/ui_and_localization/make_installer_localizable.
   -->
   <?define
-  ProductName="AdGuard DNS Client" ?>
+  ProductName="AdGuard DNS CLI" ?>
   <?define
   Manufacturer="Adguard Software Limited" ?>
 
