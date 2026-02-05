@@ -25,7 +25,7 @@ See also the [v0.1.0 GitHub milestone][ms-v0.1.0].
 
 ### Security
 
-- Go version has been updated to prevent the possibility of exploiting the Go vulnerabilities fixed in [1.25.5][go-1.25.5].
+- Go version has been updated to prevent the possibility of exploiting the Go vulnerabilities fixed in [1.25.7][go-1.25.7].
 
 ### Changed
 
@@ -46,7 +46,7 @@ See also the [v0.1.0 GitHub milestone][ms-v0.1.0].
     1. Install the AdGuard DNS CLI.
     1. Restore the configuration file (if any).
 
-[go-1.25.5]: https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
+[go-1.25.7]: https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
 [ms-v0.1.0]: https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/2?closed=1
 
 ## [v0.0.4] - 2025-05-06
