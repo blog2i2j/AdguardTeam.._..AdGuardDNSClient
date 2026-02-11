@@ -15,6 +15,11 @@ See also the [v0.1.1 GitHub milestone][ms-v0.1.1].
 
 NOTE: Add new changes BELOW THIS COMMENT.
 -->
+
+### Fixed
+
+- Service installation issues due to a service unit file name ([#13]).
+
 <!--
 NOTE: Add new changes ABOVE THIS COMMENT.
 -->
@@ -48,6 +53,8 @@ See also the [v0.1.0 GitHub milestone][ms-v0.1.0].
 
 [go-1.25.7]: https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
 [ms-v0.1.0]: https://github.com/AdguardTeam/AdGuardDNSCLI/milestone/2?closed=1
+
+[#13]: https://github.com/AdguardTeam/AdGuardDNSCLI/issues/13
 
 ## [v0.0.4] - 2025-05-06
 
