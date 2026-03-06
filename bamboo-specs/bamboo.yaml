@@ -151,6 +151,9 @@
               # Copy the deploy script to the working repository.
               cp ../bamboo-deploy-publisher/deploy.sh ./deploy.sh
 
+              version="$(env CHANNEL=${bamboo_channel} sh ./scripts/make/version.sh)"
+              readonly version
+
               docker info
 
               docker build \
@@ -164,7 +167,7 @@
                   --build-arg "REVISION=${bamboo_repository_revision_number}" \
                   --build-arg "SIGNER_API_KEY=${bamboo_adguardDnsClientWinSignerSecretApiKey}" \
                   --build-arg "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" \
-                  --build-arg "VERSION=${bamboo_buildNumber}" \
+                  --build-arg "VERSION=$version" \
                   --output '.' \
                   --progress 'plain' \
                   --target 'builder-exporter' \
@@ -218,6 +221,9 @@
               # Copy the deploy script to the working repository.
               cp ../bamboo-deploy-publisher/deploy.sh ./deploy.sh
 
+              version="$(env CHANNEL=${bamboo_channel} sh ./scripts/make/version.sh)"
+              readonly version
+
               docker info
 
               docker build \
@@ -231,7 +237,7 @@
                   --build-arg "REVISION=${bamboo_repository_revision_number}" \
                   --build-arg "SIGNER_API_KEY=${bamboo_adguardDnsClientWinSignerSecretApiKey}" \
                   --build-arg "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" \
-                  --build-arg "VERSION=${bamboo_buildNumber}" \
+                  --build-arg "VERSION=$version" \
                   --output '.' \
                   --progress 'plain' \
                   --target 'qa-builder-exporter' \

@@ -7,7 +7,7 @@
 # This comment is used to simplify checking local copies of the Makefile.  Bump
 # this number every time a significant change is made to this Makefile.
 #
-# AdGuard-Project-Version: 11
+# AdGuard-Project-Version: 13
 
 # Don't name these macros "GO" etc., because GNU Make apparently makes them
 # exported environment variables with the literal value of "${GO:-go}" and so
@@ -35,6 +35,8 @@ SIGN = 1
 SIGNER_API_KEY = not-a-real-key
 VERSION = v0.0.0
 
+# TODO(f.setrakov): Remove the bin directory from the paths, as it is no longer
+# needed.
 ENV = env \
 	BRANCH="$(BRANCH)" \
 	CHANNEL="$(CHANNEL)" \
@@ -64,6 +66,15 @@ ENV_MISC = env \
 
 # Keep the line above blank.
 
+ENV_DOCKER = env \
+	BRANCH="$(BRANCH)" \
+	REVISION="$(REVISION)" \
+	SUDO="$(SUDO)" \
+	VERBOSE="$(VERBOSE.MACRO)" \
+	VERSION="$(VERSION)" \
+
+# Keep the line above blank.
+
 # Keep this target first, so that a naked make invocation triggers a full build.
 .PHONY: build
 build: go-deps go-build
@@ -74,17 +85,21 @@ init: ; git config core.hooksPath ./scripts/hooks
 .PHONY: test
 test: go-test
 
-.PHONY: go-build go-deps go-env go-lint go-test go-tools go-upd-tools
+.PHONY: go-build go-deps go-env go-lint go-test go-upd-tools
 go-build:     ; $(ENV)          "$(SHELL)" ./scripts/make/go-build.sh
 go-deps:      ; $(ENV)          "$(SHELL)" ./scripts/make/go-deps.sh
 go-env:       ; $(ENV)          "$(GO.MACRO)" env
 go-lint:      ; $(ENV)          "$(SHELL)" ./scripts/make/go-lint.sh
 go-test:      ; $(ENV) RACE='1' "$(SHELL)" ./scripts/make/go-test.sh
-go-tools:     ; $(ENV)          "$(SHELL)" ./scripts/make/go-tools.sh
 go-upd-tools: ; $(ENV)          "$(SHELL)" ./scripts/make/go-upd-tools.sh
 
+.PHONY: docker-build docker-run docker-test
+docker-build: ; $(ENV_DOCKER) "$(SHELL)" ./scripts/make/docker-build.sh
+docker-run:   ; $(ENV_DOCKER) "$(SHELL)" ./scripts/make/docker-run.sh
+docker-test:  ; $(ENV_DOCKER) "$(SHELL)" ./scripts/make/docker-test.sh
+
 .PHONY: go-check
-go-check: go-tools go-lint go-test
+go-check: go-lint go-test
 
 # A quick check to make sure that all operating systems relevant to the
 # development of the project can be typechecked and built successfully.

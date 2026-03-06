@@ -3,7 +3,7 @@
 # This comment is used to simplify checking local copies of the script.  Bump
 # this number every time a significant change is made to this script.
 #
-# AdGuard-Project-Version: 15
+# AdGuard-Project-Version: 18
 
 verbose="${VERBOSE:-0}"
 readonly verbose
@@ -133,6 +133,9 @@ underscores() {
 	fi
 }
 
+go="${GO:-go}"
+readonly go
+
 # TODO(a.garipov): Add an analyzer to look for `fallthrough`, `goto`, and `new`?
 
 # Checks
@@ -143,9 +146,9 @@ run_linter -e method_const
 
 run_linter -e underscores
 
-run_linter -e gofumpt --extra -e -l .
+run_linter -e "$go" tool gofumpt --extra -e -l .
 
-run_linter "${GO:-go}" vet ./...
+run_linter "$go" vet work
 
 # govulncheck is not stricly reproducible, because it queries the VulnDB, which
 # is updated constantly.  If a stricly reproducible lint is desired, for example
@@ -157,18 +160,18 @@ run_linter "${GO:-go}" vet ./...
 if [ "${IGNORE_NON_REPRODUCIBLE:-1}" -gt '0' ]; then
 	# run_linter calls set +e, so don't mind the cancelling effect of ||.
 	# shellcheck disable=SC2310
-	run_linter govulncheck work || :
+	run_linter "$go" tool govulncheck work || :
 else
-	run_linter govulncheck work
+	run_linter "$go" tool govulncheck work
 fi
 
-run_linter gocyclo --over 10 .
+run_linter "$go" tool gocyclo --over 10 .
 
-run_linter gocognit --over 10 .
+run_linter "$go" tool gocognit --over 10 .
 
-run_linter ineffassign ./...
+run_linter "$go" tool ineffassign work
 
-run_linter unparam ./...
+run_linter "$go" tool unparam work
 
 find_with_ignore \
 	-type 'f' \
@@ -181,23 +184,20 @@ find_with_ignore \
 	-o -name '*.yaml' \
 	-o -name '*.yml' \
 	')' \
-	-exec 'misspell' '--error' '{}' '+'
+	-exec "$go" 'tool' 'misspell' '--error' '{}' '+'
 
-run_linter nilness ./...
+run_linter "$go" tool nilness work
 
-run_linter fieldalignment ./...
+run_linter "$go" tool fieldalignment work
 
-run_linter -e shadow --strict ./...
+run_linter -e "$go" tool shadow --strict work
 
-run_linter gosec --fmt=golint --quiet ./...
+run_linter "$go" tool gosec --exclude-generated --fmt=golint --quiet work
 
-run_linter errcheck ./...
+run_linter "$go" tool errcheck work
 
-staticcheck_matrix='
-darwin:  GOOS=darwin
-linux:   GOOS=linux
-windows: GOOS=windows
-'
-readonly staticcheck_matrix
-
-printf '%s' "$staticcheck_matrix" | run_linter staticcheck --matrix ./...
+run_linter "$go" tool staticcheck --matrix work <<-'EOF'
+	darwin: GOOS=darwin
+	linux:  GOOS=linux
+	windows: GOOS=windows
+EOF

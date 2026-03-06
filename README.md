@@ -92,7 +92,7 @@ make init
 Then, install the necessary tools and dependencies:
 
 ```sh
-make go-deps go-tools
+make go-deps
 ```
 
 That’s pretty much it! You should now be able to lint, test, and build the `adguarddns-cli` binary:

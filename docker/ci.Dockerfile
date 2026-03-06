@@ -3,7 +3,7 @@
 # This comment is used to simplify checking local copies of the Dockerfile.
 # Bump this number every time a significant change is made to this Dockerfile.
 #
-# AdGuard-Project-Version: 10
+# AdGuard-Project-Version: 11
 
 # Dockerfile guidelines:
 #
@@ -53,7 +53,6 @@ make \
 	VERBOSE=1 \
 	go-env \
 	go-deps \
-	go-tools \
 	;
 EOF
 
